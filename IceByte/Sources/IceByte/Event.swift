@@ -11,7 +11,7 @@ import Foundation
 public struct Event {
     /// Name contains the event system
     public struct Name : Equatable {
-        private let rawValue: String
+        internal let rawValue: String
         
         public init(_ rawValue: String) {
             self.rawValue = rawValue
@@ -28,6 +28,7 @@ public struct Event {
     // Optional additional event data
     public let data: Any?
     
+    // Create a new event with the specified name and data
     public init(_ name: Event.Name, _ data: Any? = nil) {
         self.name = name
         self.data = data
